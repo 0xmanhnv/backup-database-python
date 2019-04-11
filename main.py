@@ -14,7 +14,8 @@ if __name__ == "__main__":
     timestamp, bks = backup_mysql(
         user=os.getenv('DB_USER'), 
         password=os.getenv('DB_PASSWORD'), 
-        host=os.getenv('DB_HOST')
+        host=os.getenv('DB_HOST'),
+        db_name=os.getenv('DB_BACKUP_NAME')
     )
     if bks:
         msg = create_mail(
